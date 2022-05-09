@@ -18,7 +18,7 @@ export const Navbar = () => {
 
     const dispatch = useDispatch();
     console.log('CartData:', CartData)
-    const TotalQuantity = CartData?.reduce((amount, item) => {
+    const TotalQuantity = CartData.reduce((amount, item) => {
         return (
             amount + Number(item.quantity)
         )
