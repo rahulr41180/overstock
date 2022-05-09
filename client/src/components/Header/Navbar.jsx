@@ -23,7 +23,7 @@ export const Navbar = () => {
     //         amount + Number(item.quantity)
     //     )
     // },0)
-
+    var TotalQuantity = 1;
     useEffect(() => {
         getData();
     },[])
