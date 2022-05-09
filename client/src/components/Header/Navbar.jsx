@@ -18,18 +18,18 @@ export const Navbar = () => {
 
     const dispatch = useDispatch();
     console.log('CartData:', CartData)
-    // const TotalQuantity = CartData.reduce((amount, item) => {
-    //     return (
-    //         amount + Number(item.quantity)
-    //     )
-    // },0)
-    var TotalQuantity = 1;
+    const TotalQuantity = CartData.reduce((amount, item) => {
+        return (
+            amount + Number(item.quantity)
+        )
+    },0)
+
     useEffect(() => {
         getData();
     },[])
 
     const getData = () => {
-        axios.get("/cart/tonavbar")
+        axios.get("https://agile-woodland-69576.herokuapp.com/cart/tonavbar")
         // .then(res => setCartData(res.data))
         .then(res => dispatch(addCartData(res.data)))
         .catch(error => console.log("Error : ", error))

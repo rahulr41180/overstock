@@ -20,7 +20,7 @@ export const Cart = (props) => {
     const CartQuantity = useSelector((store) => store.CartDetails.cartquantity);
     console.log('CartQuantity:', CartQuantity)
     console.log('CartData:', CartData)
-    const TotalQuantity = CartData?.reduce((amount, item) => {
+    const TotalQuantity = CartData.reduce((amount, item) => {
         return (
 
             amount + Number(item.quantity)
@@ -87,7 +87,7 @@ export const Cart = (props) => {
     },[])
 
     const getData = () => {
-        axios.get("/cart/tocart")
+        axios.get("https://agile-woodland-69576.herokuapp.com/cart/tocart")
         // .then(res => setCartData(res.data))
         .then(res => dispatch(addCartData(res.data)))
         .catch(error => console.log("Error : ", error))
