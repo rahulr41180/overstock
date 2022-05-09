@@ -18,11 +18,11 @@ export const Navbar = () => {
 
     const dispatch = useDispatch();
     console.log('CartData:', CartData)
-    const TotalQuantity = CartData.reduce((amount, item) => {
-        return (
-            amount + Number(item.quantity)
-        )
-    },0)
+    // const TotalQuantity = CartData.reduce((amount, item) => {
+    //     return (
+    //         amount + Number(item.quantity)
+    //     )
+    // },0)
 
     useEffect(() => {
         getData();
